@@ -10,7 +10,7 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className=" font-alice sticky top-0 shadow-md shadow-gray-400 text-white">
+    <nav className=" font-alice bg-white sticky top-0 shadow-md shadow-gray-400 text-white">
       {/* Desktop View */}
       <div className="hidden lg:flex justify-around items-center py-7">
         <h1
