@@ -10,15 +10,15 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-gray-800 sticky top-0 shadow-md shadow-gray-400 text-white">
+    <nav className="bg-gray-800 font-alice sticky top-0 shadow-md shadow-gray-400 text-white">
       {/* Desktop View */}
       <div className="hidden lg:flex justify-around items-center py-7">
         <h1
         onClick={()=>navigate("/")}
-        style={{ letterSpacing: "15px" }} className="text-xl cursor-pointer font-semibold">
+        style={{ letterSpacing: "15px" }} className="text-2xl cursor-pointer select-none font-semibold">
           VOT<span className="text-[#7049c3]">O</span>HOT
         </h1>
-        <ul className="flex items-center md:gap-5 lg:gap-10 text-lg" style={{ letterSpacing: "3px" }}>
+        <ul className="flex items-center md:gap-5 lg:gap-10 text-xl" style={{ letterSpacing: "3px" }}>
           <li
             onClick={() => navigate("/")}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
@@ -51,7 +51,7 @@ export default function Navbar() {
 
       {/* Mobile View */}
       <div className="lg:hidden flex justify-between items-center px-5 py-5">
-        <h1 onClick={()=>navigate("/")} style={{ letterSpacing: "10px" }} className="text-xl cursor-pointer font-semibold">
+        <h1 onClick={()=>navigate("/")} style={{ letterSpacing: "10px" }} className="text-2xl select-none cursor-pointer font-semibold">
         VOT<span className="text-[#7049c3]">O</span>HOT
         </h1>
 
@@ -72,7 +72,7 @@ export default function Navbar() {
           isOpen ? "max-h-screen opacity-100 py-5" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 text-lg text-center" style={{ letterSpacing: "3px" }}>
+        <ul className="flex flex-col gap-5 text-xl text-center" style={{ letterSpacing: "3px" }}>
           <li
             onClick={() => {navigate("/");setIsOpen(false)}}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${

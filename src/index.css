@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Sacramento&display=swap');
-*{
+/* *{
     font-family: 'alice', sans-serif;
-}
+} */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
