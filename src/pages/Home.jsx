@@ -7,13 +7,13 @@ export default function Home() {
         <div className='flex flex-col py-10 lg:flex-row md:px-10 bg-gray-800'>
           {/* Left section */}
           <div className='lg:w-1/2 flex flex-col px-2 gap-5 justify-center order-2 lg:order-1 items-center text-white'>
-            <h1 className='text-5xl md:text-7xl lg:text-8xl'>Blazing-Fast <span className='text-[#7049c3]'>Hosting</span>, Engineered for Excellence</h1>
-            <p className='text-lg tracking-widest'>Experience unmatched speed and reliability with our next-generation hosting solutions. Designed for peak performance, 
+            <h1 className='text-4xl md:text-6xl lg:text-7xl'>Blazing-Fast <span className='text-[#7049c3]'>Hosting</span>, Engineered for Excellence</h1>
+            <p className='text-base tracking-widest'>Experience unmatched speed and reliability with our next-generation hosting solutions. Designed for peak performance, 
               our hosting ensures lightning-fast load times, rock-solid security, and seamless scalability. Whether you're running a business 
               website or a high-traffic application, we provide the power and flexibility you need to succeed.</p>
               <div className='flex flex-col lg:flex-row gap-5 lg:gap-10'>
-                <button style={{letterSpacing:"5px"}} className='bg-[#7049c3] px-6 rounded-lg text-xl py-2'>Shop Now</button>
-                <button style={{letterSpacing:"5px"}} className='bg-[#7049c3] px-6 rounded-lg text-xl py-2'>Contact</button>
+                <button style={{letterSpacing:"5px"}} className='bg-[#7049c3] px-6 rounded-lg text-lg py-2'>Shop Now</button>
+                <button style={{letterSpacing:"5px"}} className='bg-[#7049c3] px-6 rounded-lg text-lg py-2'>Contact</button>
               </div>
           </div>
           {/* Right Section */}
