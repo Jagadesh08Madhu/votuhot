@@ -18,7 +18,7 @@ export default function Navbar() {
         style={{ letterSpacing: "15px" }} className="text-xl cursor-pointer select-none font-semibold">
           VOT<span className="text-[#7049c3]">O</span>HOT
         </h1>
-        <ul className="flex items-center md:gap-5 lg:gap-10 text-lg" style={{ letterSpacing: "3px" }}>
+        <ul className="flex items-center md:gap-5 lg:gap-10 text-base" style={{ letterSpacing: "3px" }}>
           <li
             onClick={() => navigate("/")}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
@@ -72,7 +72,7 @@ export default function Navbar() {
           isOpen ? "max-h-screen opacity-100 py-5" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 text-lg text-center" style={{ letterSpacing: "3px" }}>
+        <ul className="flex flex-col gap-5 text-base text-center" style={{ letterSpacing: "3px" }}>
           <li
             onClick={() => {navigate("/");setIsOpen(false)}}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
