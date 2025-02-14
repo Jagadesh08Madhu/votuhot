@@ -10,19 +10,19 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-gray-800 font-alice sticky top-0 shadow-md shadow-gray-400 text-white">
+    <nav className=" font-alice sticky top-0 shadow-md shadow-gray-400 text-white">
       {/* Desktop View */}
       <div className="hidden lg:flex justify-around items-center py-7">
         <h1
         onClick={()=>navigate("/")}
-        style={{ letterSpacing: "15px" }} className="text-xl cursor-pointer select-none font-semibold">
-          VOT<span className="text-[#7049c3]">O</span>HOT
+        style={{ letterSpacing: "15px" }} className="text-xl text-gray-800 cursor-pointer select-none font-semibold">
+          VOT<span className="text-[#7049C3]">O</span>HOT
         </h1>
         <ul className="flex items-center md:gap-5 lg:gap-10 text-base" style={{ letterSpacing: "3px" }}>
           <li
             onClick={() => navigate("/")}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-400 hover:text-white"
+              isActive("/") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-800 hover:text-black"
             }`}
           >
             Home
@@ -30,7 +30,7 @@ export default function Navbar() {
           <li
             onClick={() => navigate("/about")}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/about") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-400 hover:text-white"
+              isActive("/about") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-800 hover:text-black"
             }`}
           >
             About
@@ -38,7 +38,7 @@ export default function Navbar() {
           <li
             onClick={() => navigate("/products")}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/products") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-400 hover:text-white"
+              isActive("/products") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-800 hover:text-black"
             }`}
           >
             Hosting Products
@@ -51,7 +51,7 @@ export default function Navbar() {
 
       {/* Mobile View */}
       <div className="lg:hidden flex justify-between items-center px-5 py-5">
-        <h1 onClick={()=>navigate("/")} style={{ letterSpacing: "10px" }} className="text-xl select-none cursor-pointer font-semibold">
+        <h1 onClick={()=>navigate("/")} style={{ letterSpacing: "10px" }} className="text-xl text-gray-800 select-none cursor-pointer font-semibold">
         VOT<span className="text-[#7049c3]">O</span>HOT
         </h1>
 
@@ -76,7 +76,7 @@ export default function Navbar() {
           <li
             onClick={() => {navigate("/");setIsOpen(false)}}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-400 hover:text-white"
+              isActive("/") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-800 hover:text-black"
             }`}
           >
             Home
@@ -84,7 +84,7 @@ export default function Navbar() {
           <li
             onClick={() => {navigate("/about"); setIsOpen(false)}}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/about") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-400 hover:text-white"
+              isActive("/about") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-800 hover:text-black"
             }`}
           >
             About
@@ -92,7 +92,7 @@ export default function Navbar() {
           <li
             onClick={() => {navigate("/products"); setIsOpen(false)}}
             className={`cursor-pointer transition-all duration-300 ease-in-out ${
-              isActive("/products") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-400 hover:text-white"
+              isActive("/products") ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md" : "text-gray-800 hover:text-black"
             }`}
           >
             Hosting Products
