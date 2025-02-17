@@ -62,13 +62,13 @@ export default function Navbar() {
             isOpen ? "rotate-180 scale-125" : "rotate-0"
           }`}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X color="black" size={28} /> : <Menu color="black" size={28} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden flex flex-col items-center bg-gray-900 transition-all duration-300 ${
+        className={`lg:hidden flex flex-col items-center transition-all duration-300 ${
           isOpen ? "max-h-screen opacity-100 py-5" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
