@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import overview from '../assets/overview.jpg';
+import overview from '../../assets/overview.jpg';
 import {
     Accordion,
     AccordionHeader,
@@ -59,11 +59,11 @@ export default function Overview() {
 
     return (
         <motion.section 
-            className='py-10 lg:mx-20'
+            className='py-10 lg:mx-20 mx-5'
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 0.3 }} // Triggers animation when 30% of the section is visible
+            viewport={{ once: true, amount: 0.5 }} // Triggers animation when 30% of the section is visible
         >
             <div className='flex flex-col lg:flex-row gap-10 items-center'>
                 {/* left section */}
@@ -88,7 +88,7 @@ export default function Overview() {
                     <h1 className='text-4xl lg:text-5xl text-[#2F1C6A] font-bold mb-6'>
                         Secure and Reliable Computing Power for Your Hosting Needs
                     </h1>
-                    <div className='space-y-10'>
+                    <div  className='space-y-10 '>
                         {accordionData.map(({ id, question, answer }) => (
                             <Accordion key={id} open={open === id} icon={<Icon id={id} open={open} />}>
                                 <AccordionHeader className='text-lg font-semibold' onClick={() => handleOpen(id)}>

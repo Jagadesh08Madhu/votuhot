@@ -1,10 +1,14 @@
 import React from 'react'
 import hero from '../assets/hero.webp'
-import Overview from '../components/Overview'
+import Overview from '../components/HomeComponents/Overview'
+import { useNavigate } from 'react-router-dom'
+import Features from '../components/HomeComponents/Features';
 
 export default function Home() {
+
+  const navigate = useNavigate();
   return (
-    <section className='font-alice'>
+    <section style={{zIndex:2}} className='font-alice'>
         <div className='flex flex-col py-5 lg:flex-row md:px-10 '>
           {/* Left section */}
           <div className='lg:w-1/2 animate-fadeInUp flex flex-col px-2 gap-5 justify-center order-2 lg:order-1 items-center md:items-start text-gray-800'>
@@ -13,10 +17,14 @@ export default function Home() {
               our hosting ensures lightning-fast load times, rock-solid security, and seamless scalability. Whether you're running a business 
               website or a high-traffic application, we provide the power and flexibility you need to succeed.</p>
               <div className="grid grid-cols-2 pt-10 gap-5 lg:gap-10">
-                <button style={{ letterSpacing: "5px" }} className="bg-[#2F1C6A] text-white px-6 rounded-lg text-base py-3">
+                <button
+                onClick={()=>navigate("/products")}
+                style={{ letterSpacing: "5px" }} className="bg-[#2F1C6A] text-white px-6 rounded-lg text-base py-3">
                   Shop Now
                 </button>
-                <button style={{ letterSpacing: "5px" }} className="bg-[#E2DBFC] text-[#2F1C6A] px-6 rounded-lg text-base py-3  ">
+                <button 
+                onClick={()=>navigate("/contact")}
+                style={{ letterSpacing: "5px" }} className="bg-[#E2DBFC] text-[#2F1C6A] px-6 rounded-lg text-base py-3  ">
                   Contact
                 </button>
               </div>
@@ -29,6 +37,7 @@ export default function Home() {
 
         {/* Overview */}
         <Overview/>
+        <Features/>
     </section>
   )
 }
