@@ -69,8 +69,8 @@ export default function Features() {
               whileHover={{ scale: 1.05 }}
             >
               <span className='flex justify-center'>{featurecontent.icon}</span>
-              <h1 className='text-center text-2xl'>{featurecontent.heading}</h1>
-              <p className='text-lg text-center'>{featurecontent.content}</p>
+              <h1 className='text-center text-xl'>{featurecontent.heading}</h1>
+              <p className='text-base text-center'>{featurecontent.content}</p>
             </motion.div>
           ))}
         </div>
