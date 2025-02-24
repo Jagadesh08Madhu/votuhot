@@ -4,6 +4,7 @@ import Overview from '../components/HomeComponents/Overview'
 import { useNavigate } from 'react-router-dom'
 import Features from '../components/HomeComponents/Features';
 import Blog from '../components/HomeComponents/Blog';
+import EccomContent from '../components/HomeComponents/EccomContent';
 
 export default function Home() {
 
@@ -39,6 +40,7 @@ export default function Home() {
         {/* Overview */}
         <Overview/>
         <Features/>
+        <EccomContent/>
         <Blog/>
     </section>
   )
