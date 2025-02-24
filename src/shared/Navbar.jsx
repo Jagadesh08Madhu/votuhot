@@ -131,7 +131,11 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <li
               key={link.path}
-              className="cursor-pointer transition-all duration-300 ease-in-out text-gray-800 hover:text-black"
+              className={`cursor-pointer transition-all duration-300 ease-in-out text-gray-800 hover:text-black ${
+                isActive(link.path)
+                  ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md"
+                  : "text-gray-800 hover:text-black"
+              }`}
             >
               {link.hasSubmenu ? (
                 <>

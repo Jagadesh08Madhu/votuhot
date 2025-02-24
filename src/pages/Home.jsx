@@ -3,6 +3,7 @@ import hero from '../assets/hero.webp'
 import Overview from '../components/HomeComponents/Overview'
 import { useNavigate } from 'react-router-dom'
 import Features from '../components/HomeComponents/Features';
+import Blog from '../components/HomeComponents/Blog';
 
 export default function Home() {
 
@@ -38,6 +39,7 @@ export default function Home() {
         {/* Overview */}
         <Overview/>
         <Features/>
+        <Blog/>
     </section>
   )
 }

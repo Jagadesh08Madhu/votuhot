@@ -91,10 +91,10 @@ export default function Overview() {
                     <div  className='space-y-10 '>
                         {accordionData.map(({ id, question, answer }) => (
                             <Accordion key={id} open={open === id} icon={<Icon id={id} open={open} />}>
-                                <AccordionHeader className='text-lg font-semibold' onClick={() => handleOpen(id)}>
+                                <AccordionHeader className='text-xl font-semibold' onClick={() => handleOpen(id)}>
                                     {question}
                                 </AccordionHeader>
-                                <AccordionBody className='text-gray-600 mt-5 text-base'>
+                                <AccordionBody className='text-gray-600 text-lg mt-5'>
                                     {answer}
                                 </AccordionBody>
                             </Accordion>
