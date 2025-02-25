@@ -52,7 +52,7 @@ export default function Navbar() {
         >
           VOT<span className="text-[#7049C3]">O</span>HOT
         </h1>
-        <ul className="flex items-center md:gap-5 lg:gap-10 text-sm" style={{ letterSpacing: "3px" }}>
+        <ul className="flex items-center md:gap-5 lg:gap-10 text-xs" style={{ letterSpacing: "3px" }}>
           {navLinks.map((link) => (
             <li
               key={link.path}
@@ -127,7 +127,7 @@ export default function Navbar() {
           isOpen ? "max-h-screen opacity-100 py-5" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 text-sm text-center" style={{ letterSpacing: "3px" }}>
+        <ul className="flex flex-col gap-5 text-xs text-center" style={{ letterSpacing: "3px" }}>
           {navLinks.map((link) => (
             <li
               key={link.path}
