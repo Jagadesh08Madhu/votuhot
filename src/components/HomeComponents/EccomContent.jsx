@@ -57,7 +57,7 @@ export default function EccomContent() {
                 seamless user experiences, high-speed performance, and <span className='font-bold text-[#7049C3]'>secure transactions</span>, ensuring that your online store operates efficiently.
             </p>
 
-            <p className='text-xl mt-4'>
+            <p className='text-base mt-4'>
                 At <span className='font-bold text-[#7049C3]'>BFINIT</span>, we prioritize mobile responsiveness, SEO optimization, and user-friendly interfaces to 
                 maximize customer engagement and conversions. From intuitive product catalogs to secure payment gateways and real-time order tracking, 
                 we deliver a complete ecommerce ecosystem that empowers your business to thrive online.
