@@ -52,7 +52,7 @@ export default function Navbar() {
         >
           VOT<span className="text-[#7049C3]">O</span>HOT
         </h1>
-        <ul className="flex items-center md:gap-5 lg:gap-10 text-xs" style={{ letterSpacing: "3px" }}>
+        <ul className="flex items-center md:gap-5 lg:gap-10 text-sm" style={{ letterSpacing: "3px" }}>
           {navLinks.map((link) => (
             <li
               key={link.path}
@@ -95,7 +95,7 @@ export default function Navbar() {
         </ul>
         <button
           onClick={() => navigate("/contact")}
-          className="bg-[#7049c3] px-6 py-2 rounded-md text-white hover:bg-[#5d3cae] transition-all"
+          className="bg-[#7049c3] px-6 py-2 text-sm rounded-md text-white hover:bg-[#5d3cae] transition-all"
           style={{ letterSpacing: "6px" }}
         >
           Contact
@@ -127,7 +127,7 @@ export default function Navbar() {
           isOpen ? "max-h-screen opacity-100 py-5" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 text-xs text-center" style={{ letterSpacing: "3px" }}>
+        <ul className="flex flex-col gap-5 text-sm text-center" style={{ letterSpacing: "3px" }}>
           {navLinks.map((link) => (
             <li
               key={link.path}
@@ -187,7 +187,7 @@ export default function Navbar() {
             navigate("/contact");
             setIsOpen(false);
           }}
-          className="bg-[#7049c3] px-6 text-white py-2 mt-5 rounded-md hover:bg-[#5d3cae] transition-all"
+          className="bg-[#7049c3] text-sm px-6 text-white py-2 mt-5 rounded-md hover:bg-[#5d3cae] transition-all"
           style={{ letterSpacing: "6px" }}
         >
           Contact
