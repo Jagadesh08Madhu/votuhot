@@ -51,7 +51,7 @@ export default function EccomContent() {
 
         <div className='lg:w-1/2 flex flex-col gap-5 lg:p-10'>
             <h1 className='text-3xl lg:text-4xl'>BFINIT Ecommerce Custom-Built Websites</h1>
-            <p className='text-lg'>
+            <p className='text-base'>
                 Building your business with <span className='font-bold text-[#7049C3]'>BFINIT Ecommerce Custom-Built Websites</span> means getting a 
                 tailor-made solution that perfectly aligns with your brand and business goals. Our ecommerce platforms are designed to provide 
                 seamless user experiences, high-speed performance, and <span className='font-bold text-[#7049C3]'>secure transactions</span>, ensuring that your online store operates efficiently.
