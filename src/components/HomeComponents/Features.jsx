@@ -53,8 +53,8 @@ export default function Features() {
       transition={{ duration: 0.8 }}
     >
       <div>
-        <h1 className='text-[#673DE6] text-5xl lg:text-6xl'>Features</h1>
-        <h1 className='text-2xl lg:text-4xl my-5'>Reliable and Scalable Server Hosting Solutions</h1>
+        <h1 className='text-[#673DE6] text-3xl lg:text-4xl'>Features</h1>
+        <h1 className='text-2xl lg:text-3xl my-5'>Reliable and Scalable Server Hosting Solutions</h1>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10'>
           {FeaturesContent.map((featurecontent, i) => (
@@ -69,8 +69,8 @@ export default function Features() {
               whileHover={{ scale: 1.05 }}
             >
               <span className='flex justify-center'>{featurecontent.icon}</span>
-              <h1 className='text-center text-xl'>{featurecontent.heading}</h1>
-              <p className='text-base text-center'>{featurecontent.content}</p>
+              <h1 className='text-center text-lg'>{featurecontent.heading}</h1>
+              <p className='text-sm text-center'>{featurecontent.content}</p>
             </motion.div>
           ))}
         </div>
