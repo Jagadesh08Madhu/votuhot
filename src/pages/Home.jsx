@@ -21,12 +21,12 @@ export default function Home() {
               <div className="grid grid-cols-2 pt-10 gap-5 lg:gap-10">
                 <button
                 onClick={()=>navigate("/products")}
-                style={{ letterSpacing: "5px" }} className="bg-[#2F1C6A] text-white px-6 rounded-lg text-base py-3">
+                style={{ letterSpacing: "5px" }} className="bg-[#2F1C6A] text-white px-6 rounded-lg text-sm py-3">
                   Shop Now
                 </button>
                 <button 
                 onClick={()=>navigate("/contact")}
-                style={{ letterSpacing: "5px" }} className="bg-[#E2DBFC] text-[#2F1C6A] px-6 rounded-lg text-base py-3  ">
+                style={{ letterSpacing: "5px" }} className="bg-[#E2DBFC] text-[#2F1C6A] px-6 rounded-lg text-sm py-3  ">
                   Contact
                 </button>
               </div>
