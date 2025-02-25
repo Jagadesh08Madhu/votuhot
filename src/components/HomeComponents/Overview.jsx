@@ -85,16 +85,16 @@ export default function Overview() {
                     transition={{ duration: 1, delay: 0.3 }}
                     viewport={{ once: true, amount: 0.3 }}
                 >
-                    <h1 style={{lineHeight:'60px'}} className='text-3xl lg:text-4xl text-[#2F1C6A] font-bold mb-6'>
+                    <h1 style={{lineHeight:'50px'}} className='text-3xl lg:text-4xl text-[#2F1C6A] font-bold mb-6'>
                         Secure and Reliable Computing Power for Your Hosting Needs
                     </h1>
-                    <div  className='flex flex-col gap-10 mt-10'>
+                    <div  className='flex flex-col lg:gap-3'>
                         {accordionData.map(({ id, question, answer }) => (
                             <Accordion key={id} open={open === id} icon={<Icon id={id} open={open} />}>
                                 <AccordionHeader className='text-lg font-semibold' onClick={() => handleOpen(id)}>
                                     {question}
                                 </AccordionHeader>
-                                <AccordionBody className='text-gray-600 text-base mt-5'>
+                                <AccordionBody className='text-gray-600 text-base'>
                                     {answer}
                                 </AccordionBody>
                             </Accordion>

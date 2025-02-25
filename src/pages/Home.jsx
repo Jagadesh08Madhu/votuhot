@@ -6,6 +6,7 @@ import Features from '../components/HomeComponents/Features';
 import Blog from '../components/HomeComponents/Blog';
 import EccomContent from '../components/HomeComponents/EccomContent';
 import Mission from '../components/HomeComponents/Mission';
+import  AnimatedTestimonialsDemo  from './AnimatedTestimonialsDemo';
 
 export default function Home() {
 
@@ -43,6 +44,7 @@ export default function Home() {
         <Features/>
         <EccomContent/>
         <Mission/>
+        <AnimatedTestimonialsDemo/>
         <Blog/>
     </section>
   )

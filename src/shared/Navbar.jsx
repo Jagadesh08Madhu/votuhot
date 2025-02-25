@@ -42,7 +42,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="font-alice bg-white sticky top-0 shadow-md shadow-gray-400 z-50">
+    <nav style={{zIndex:"1000"}} className="font-alice bg-white sticky top-0 shadow-md shadow-gray-400 z-50">
       {/* Desktop View */}
       <div className="hidden lg:flex justify-around items-center py-7">
         <h1
