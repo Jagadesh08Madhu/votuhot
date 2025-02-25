@@ -10,8 +10,9 @@ export default function Mission() {
         <motion.h1
           className="text-center text-3xl lg:text-4xl"
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{once:true , amount: 0.5}}
         >
           VOTOHOT - Secure, Scalable and Redundant
         </motion.h1>
@@ -20,8 +21,9 @@ export default function Mission() {
         <motion.p
           className="text-center text-base mt-5 mb-10"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{once:true , amount: 0.5}}
         >
           Safeguard Your Servers or Hosting Space Across Multiple Locations for Unmatched Protection.
         </motion.p>
@@ -31,8 +33,9 @@ export default function Mission() {
           <motion.div
             className="flex flex-col gap-5 order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{once:true , amount: 0.5}}
           >
             <h1 className="text-3xl lg:text-4xl">Data Center's Mission</h1>
             <p className="text-lg">
@@ -59,8 +62,9 @@ export default function Mission() {
           <motion.div
             className="order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{once:true , amount: 0.5}}
           >
             <img className="rounded-3xl" src={votohot} alt="Votohot Data Center" />
           </motion.div>
