@@ -96,7 +96,7 @@ export default function Datacenter2() {
                                     transition={{ duration: 0.5, ease: "easeInOut", delay: index * 0.2 }}
                                     viewport={{ once: true }}
                                 >
-                                    <span><GiCheckMark/></span>
+                                    <span className='text-[#7049C3]'><GiCheckMark/></span>
                                     <li className="text-base list-none lg:text-lg">{point}</li>
                                 </motion.div>
                             ))}

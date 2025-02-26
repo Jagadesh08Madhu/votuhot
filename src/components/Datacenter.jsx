@@ -1,6 +1,7 @@
 import React from 'react'
 import datacenter from '../assets/datacenter.webp'
 import Datacenter2 from './Datacenter2'
+import { motion } from 'framer-motion'
 
 export default function Datacenter() {
     const Hosting = ["Fully Managed Dedicated Server" , "Fully Managed Virtual Private Server" , "Self Managed Dedicated Server",
@@ -30,7 +31,11 @@ export default function Datacenter() {
             <h1 className='text-center text-3xl lg:text-4xl py-10 '>Our Data Center Features</h1>
             <div className='grid md:grid-cols-2 grid-cols-1 cursor-pointer lg:grid-cols-3 gap-10'>
                 {Hosting.map((hosting, i) => (
-                    <div 
+                    <motion.div 
+                    initial={{opacity:0 , y:20}}
+                    whileInView={{opacity: 1 , y:0}}
+                    transition={{duration:0.2*i , delay:0.1}}
+                    viewport={{once:true}}
                     key={i} 
                     className='group relative py-14 bg-gray-200 shadow-md rounded-2xl shadow-gray-400 flex justify-center items-center overflow-hidden'
                     >
@@ -38,7 +43,7 @@ export default function Datacenter() {
 
                     {/* Background animation */}
                     <div className="absolute w-0 h-0 bg-[#7049C3] bottom-0 right-0 transition-all duration-500 ease-in-out group-hover:w-full group-hover:h-full origin-bottom-right"></div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
