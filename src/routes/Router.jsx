@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Products from "../pages/Products";
 import Contact from "../pages/Contact";
+import Datacenter from "../components/Datacenter";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                path:"/contact",
                element:<Contact/> 
+            },
+            {
+                path:"/data-center",
+                element:<Datacenter/>
             }
         ]
     }

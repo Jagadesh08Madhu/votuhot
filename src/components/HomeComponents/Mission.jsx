@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import votohot from "../../assets/votohot.webp";
 import { BsFillGeoFill ,BsDatabaseFillGear  } from "react-icons/bs";
 import { MdManageAccounts ,MdOutlineBackup  } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Mission() {
+  const navigate = useNavigate();
   const missions = [
     {
       logo: <BsFillGeoFill/>,
@@ -79,6 +81,7 @@ export default function Mission() {
               whileTap={{ scale: 0.95 }}
               style={{ letterSpacing: "7px" }}
               className="bg-[#7049C3] w-fit px-10 py-2 text-white rounded-md"
+              onClick={()=>navigate("/data-center")}
             >
               Know More
             </motion.button>
@@ -111,7 +114,7 @@ export default function Mission() {
             viewport={{once:true, amount:0.5}}
             key={i} className="flex flex-col gap-5 rounded-3xl items-center p-8 border border-black">
               <span className="text-center text-4xl text-[#7049C3]">{missioncontent.logo}</span>
-              <h1 className="text-lg">{missioncontent.heading}</h1>
+              <h1 className="text-lg text-center">{missioncontent.heading}</h1>
               <p className="text-sm">{missioncontent.content}</p>
             </motion.div>
           ))}
