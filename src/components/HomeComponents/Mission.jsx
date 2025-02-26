@@ -105,7 +105,7 @@ export default function Mission() {
       <div className="w-full py-7">
         <h1 className="text-center py-2 text-3xl lg:text-4xl"><span className="text-[#7049C3]">GDPR Compliant</span> - Hosting & Data Protection</h1>
         <p className='text-xl lg:text-2xl my-5 text-center'  >Secure, Redundant and Compliant with Global Standards</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-5 lg:mx-20">
           {missions.map((missioncontent , i )=>(
             <motion.div
             initial={{opacity:0 , y:20}}

@@ -1,5 +1,6 @@
 import React from 'react'
 import datacenter from '../assets/datacenter.webp'
+import Datacenter2 from './Datacenter2'
 
 export default function Datacenter() {
     const Hosting = ["Fully Managed Dedicated Server" , "Fully Managed Virtual Private Server" , "Self Managed Dedicated Server",
@@ -31,7 +32,7 @@ export default function Datacenter() {
                 {Hosting.map((hosting, i) => (
                     <div 
                     key={i} 
-                    className='group relative py-14 bg-gray-200 shadow-md rounded-2xl shadow-gray-800 flex justify-center items-center overflow-hidden'
+                    className='group relative py-14 bg-gray-200 shadow-md rounded-2xl shadow-gray-400 flex justify-center items-center overflow-hidden'
                     >
                     <h1 className='z-50 group-hover:text-white relative text-black text-center text-lg'>{hosting}</h1>
 
@@ -43,6 +44,7 @@ export default function Datacenter() {
         </div>
 
       </div>
+      <Datacenter2/>
     </section>
   )
 }
