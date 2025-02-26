@@ -52,8 +52,8 @@ export default function Footer() {
 
         {/* Hosting Products */}
         <div>
-          <h1 className='mb-5 text-3xl font-semibold'>Our Products</h1>
-          <ul className='flex flex-col text-lg gap-3'>
+          <h1 className='mb-5 text-2xl font-semibold'>Our Products</h1>
+          <ul className='flex flex-col text-base gap-3'>
             {Hosting.map((hosting, i) => (
               <motion.li 
                 key={i} 
@@ -71,8 +71,8 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h1 className='mb-5 text-3xl font-semibold'>Quick Links</h1>
-          <ul className='flex flex-col gap-3 text-lg'>
+          <h1 className='mb-5 text-2xl font-semibold'>Quick Links</h1>
+          <ul className='flex flex-col gap-3 text-base'>
             {Links.map((link, i) => (
               <motion.li 
                 key={i} 
