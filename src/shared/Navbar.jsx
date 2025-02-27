@@ -109,7 +109,7 @@ export default function Navbar() {
           style={{ letterSpacing: "10px" }}
           className="text-xl text-gray-800 select-none cursor-pointer font-semibold"
         >
-          VOT<span className="text-[#7049c3]">O</span>HOT
+          VOT<span className="text-[#7049c3]">U</span>HOT
         </h1>
 
         {/* Hamburger Button */}
