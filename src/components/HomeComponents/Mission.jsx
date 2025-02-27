@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import votohot from "../../assets/votohot.webp";
+import votuhot from "../../assets/votuhot.webp";
 import { BsFillGeoFill ,BsDatabaseFillGear  } from "react-icons/bs";
 import { MdManageAccounts ,MdOutlineBackup  } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -95,7 +95,7 @@ export default function Mission() {
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{once:true , amount: 0.5}}
           >
-            <img className="rounded-3xl" src={votohot} alt="Votohot Data Center" />
+            <img className="rounded-3xl" src={votuhot} alt="Votuhot Data Center" />
           </motion.div>
         </div>
       </div>

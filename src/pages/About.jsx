@@ -64,7 +64,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative bg-opacity-90 px-5 py-10 rounded-xl shadow-md lg:w-[60%] text-center"
+          className="relative bg-opacity-90 px-5 py-10 rounded-xl lg:w-[60%] text-center"
         >
           <h1 className="text-3xl lg:text-5xl font-bold text-white mb-5 tracking-wide">
             About VOTUHOT – Powering Your Digital Infrastructure

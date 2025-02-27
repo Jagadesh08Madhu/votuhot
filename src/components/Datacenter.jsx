@@ -11,13 +11,13 @@ export default function Datacenter() {
   return (
     <section className='font-alice mx-5 lg:mx-20 py-10'>
       <div>
-        <h1 className='text-center text-3xl lg:text-5xl mb-7'><span style={{letterSpacing:"5px"}} className='text-[#5D3CAE]'>VOTOHOT</span> - Secure, Scalable and Redundant</h1>
+        <h1 className='text-center text-3xl lg:text-5xl mb-7'><span style={{letterSpacing:"5px"}} className='text-[#5D3CAE]'>VOTUHOT</span> - Secure, Scalable and Redundant</h1>
         <p className='text-center text-base lg:text-xl'>Safeguard Your Servers or Hosting Space Across Multiple Locations for Unmatched Protection.</p>
 
         <div className='flex flex-col lg:flex-row items-center justify-center gap-10 py-5'>
             <div className='flex flex-col gap-5 lg:w-1/2 order-2 lg:order-1'>
                 <h1 className='text-3xl lg:text-4xl'>Our Data Center's Mission</h1>
-                <p className='text-base lg:text-lg'>VOTOHOT - Next-Gen Data Center Solutions for Speed, Reliability & Security, Backed by Multi-Site Infrastructure and 
+                <p className='text-base lg:text-lg'>VOTUHOT - Next-Gen Data Center Solutions for Speed, Reliability & Security, Backed by Multi-Site Infrastructure and 
                     Secure Data Redundancy for Unmatched Protection.</p>
                 <p className='text-base lg:text-lg'>Our state-of-the-art facilities ensure top-tier security, constant uptime, and resilience against unforeseen circumstances, 
                     making us a trusted partner in safeguarding your critical data assets.</p>
