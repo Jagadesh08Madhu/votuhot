@@ -67,10 +67,10 @@ export default function About() {
           className="relative bg-opacity-90 px-5 py-10 rounded-xl shadow-md lg:w-[60%] text-center"
         >
           <h1 className="text-3xl lg:text-5xl font-bold text-white mb-5 tracking-wide">
-            About VOTOHOT – Powering Your Digital Infrastructure
+            About VOTUHOT – Powering Your Digital Infrastructure
           </h1>
           <p className="text-lg text-white leading-relaxed">
-            At <span className="font-semibold">VOTOHOT</span>, we provide 
+            At <span className="font-semibold">VOTUHOT</span>, we provide 
             <span className=" font-semibold"> cutting-edge server hosting solutions</span> designed 
             to deliver unmatched <strong>performance, security, and scalability</strong>. As a leading 
             <span className=" font-semibold"> server hosting service provider</span>, we empower 
@@ -91,13 +91,13 @@ export default function About() {
         <div className="lg:w-1/2 flex flex-col gap-5">
           <h1 className="text-3xl">Our Mission</h1>
           <p style={{ wordSpacing: "5px" }} className="text-lg ">
-            At VOTOHOT, our mission is to redefine server hosting by providing businesses with secure, scalable, and high-performance 
+            At VOTUHOT, our mission is to redefine server hosting by providing businesses with secure, scalable, and high-performance 
             infrastructure. We are committed to minimizing downtime, optimizing performance, and delivering superior support to help you
             focus on growing your business without technical concerns.
           </p>
-          <h1 className="text-3xl">Join VOTOHOT Today</h1>
+          <h1 className="text-3xl">Join VOTUHOT Today</h1>
           <p style={{ wordSpacing: "5px" }} className="text-lg">
-            Whether you need a fully managed dedicated server, VPS, or optimized web hosting, VOTOHOT is your trusted partner in hosting 
+            Whether you need a fully managed dedicated server, VPS, or optimized web hosting, VOTUHOT is your trusted partner in hosting 
             solutions. Power your online presence with a hosting provider that prioritizes speed, security, and reliability.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function About() {
       <div className="lg:mx-20 py-10 mx-5">
         <h1 className="text-center py-5 text-3xl">Why We Are Here</h1>
         <p className="text-center text-lg pb-5">
-          At VOTOHOT, we are more than just a hosting provider—we are your trusted partner in building and scaling a robust online presence. 
+          At VOTUHOT, we are more than just a hosting provider—we are your trusted partner in building and scaling a robust online presence. 
           Let’s grow together! 🚀
         </p>
 

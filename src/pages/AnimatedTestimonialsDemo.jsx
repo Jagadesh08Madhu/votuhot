@@ -10,28 +10,28 @@ export default function AnimatedTestimonialsDemo() {
   const testimonials = [
     {
       quote:
-        "Votohot’s hosting solutions have completely transformed our workflow. The uptime and speed are unparalleled!",
+        "Votuhot’s hosting solutions have completely transformed our workflow. The uptime and speed are unparalleled!",
       name: "Emily Watson",
       designation: "Operations Director at CloudScale",
       src: client1,
     },
     {
       quote:
-        "Seamless integration and top-notch security. Our data is safer than ever, thanks to Votohot.",
+        "Seamless integration and top-notch security. Our data is safer than ever, thanks to Votuhot.",
       name: "Michael Rodriguez",
       designation: "CTO at InnovateSphere",
       src: client2,
     },
     {
       quote:
-        "Reliable, secure, and incredibly fast! Votohot has given my business the stability it needed to grow.",
+        "Reliable, secure, and incredibly fast! Votuhot has given my business the stability it needed to grow.",
       name: "Sophia Martinez",
       designation: "Founder at WebTech Solutions",
       src: client3,
     },
     {
       quote:
-        "Lightning-fast servers and incredible support. Votohot has exceeded our expectations in every way!",
+        "Lightning-fast servers and incredible support. Votuhot has exceeded our expectations in every way!",
       name: "James Kim",
       designation: "Engineering Lead at DataPro",
       src: client4,

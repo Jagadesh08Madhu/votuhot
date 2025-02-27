@@ -50,7 +50,7 @@ export default function Navbar() {
           style={{ letterSpacing: "15px" }}
           className="text-xl text-gray-800 cursor-pointer select-none font-semibold"
         >
-          VOT<span className="text-[#7049C3]">O</span>HOT
+          VOT<span className="text-[#7049C3]">U</span>HOT
         </h1>
         <ul className="flex items-center md:gap-5 lg:gap-10 text-sm" style={{ letterSpacing: "3px" }}>
           {navLinks.map((link) => (

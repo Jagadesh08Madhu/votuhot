@@ -33,11 +33,11 @@ export default function Footer() {
       >
         {/* VOTOHOT Brand Info */}
         <div className='flex flex-col gap-5'>
-          <h1 className='text-3xl font-semibold lg:text-4xl tracking-wider'>VOTOHOT</h1>
+          <h1 className='text-3xl font-semibold lg:text-4xl tracking-wider'>VOTUHOT</h1>
           <p className='text-lg'>
-            VOTOHOT – Powering Your Online Presence with Secure, Scalable, and High-Performance Hosting Solutions.
+            VOTUHOT – Powering Your Online Presence with Secure, Scalable, and High-Performance Hosting Solutions.
           </p>
-          <h1 className='text-lg font-semibold'>Join VOTOHOT Cosmopolitan</h1>
+          <h1 className='text-lg font-semibold'>Join VOTUHOT</h1>
           <div className='flex gap-2'>
             <input
               placeholder='Enter your email'
@@ -98,7 +98,7 @@ export default function Footer() {
         transition={{ duration: 1.2, ease: "easeInOut" }}
         viewport={{ once: true }}
       >
-        <p className='text-lg'>© 2025 VOTOHOT Company. All rights reserved.</p>
+        <p className='text-lg'>© 2025 VOTUHOT Company. All rights reserved.</p>
       </motion.div>
     </section>
   );

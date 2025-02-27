@@ -42,7 +42,7 @@ export default function Mission() {
           transition={{ duration: 0.6 }}
           viewport={{once:true , amount: 0.5}}
         >
-          <span className="text-[#7049C3]">VOTOHOT</span> - Secure, Scalable and Redundant
+          <span className="text-[#7049C3]">VOTUHOT</span> - Secure, Scalable and Redundant
         </motion.h1>
 
         {/* Subtext Animation */}
@@ -67,7 +67,7 @@ export default function Mission() {
           >
             <h1 className="text-3xl lg:text-4xl">Data Center's Mission</h1>
             <p className="text-lg">
-              VOTOHOT - Next-Gen Data Center Solutions for Speed, Reliability & Security, Backed by Multi-Site Infrastructure and Secure
+              VOTUHOT - Next-Gen Data Center Solutions for Speed, Reliability & Security, Backed by Multi-Site Infrastructure and Secure
               Data Redundancy for Unmatched Protection.
             </p>
             <p className="text-lg">
