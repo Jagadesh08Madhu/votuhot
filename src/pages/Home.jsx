@@ -41,9 +41,10 @@ export default function Home() {
 
         {/* Overview */}
         <Overview/>
+        <Mission/>
+
         <Features/>
         <EccomContent/>
-        <Mission/>
         <AnimatedTestimonialsDemo/>
         <Blog/>
     </section>

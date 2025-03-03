@@ -50,7 +50,7 @@ export default function EccomContent() {
         <div className='lg:w-1/2'><img src={eccom} alt="" /></div>
 
         <div className='lg:w-1/2 flex flex-col gap-5 lg:p-10'>
-            <h1 className='text-3xl lg:text-4xl'>BFINIT Ecommerce Custom-Built Websites</h1>
+            <h1 className='text-3xl lg:text-4xl'>BFINIT Ecommerce Custom-Built Websites included with selected hosting packs</h1>
             <p className='text-base'>
                 Building your business with <span className='font-bold text-[#7049C3]'>BFINIT Ecommerce Custom-Built Websites</span> means getting a 
                 tailor-made solution that perfectly aligns with your brand and business goals. Our ecommerce platforms are designed to provide 
@@ -58,9 +58,9 @@ export default function EccomContent() {
             </p>
 
             <p className='text-base mt-4'>
-                At <span className='font-bold text-[#7049C3]'>BFINIT</span>, we prioritize mobile responsiveness, SEO optimization, and user-friendly interfaces to 
+                <span className='font-bold text-[#7049C3]'>BFINIT</span> prioritize mobile responsiveness, SEO optimization, and user-friendly interfaces to 
                 maximize customer engagement and conversions. From intuitive product catalogs to secure payment gateways and real-time order tracking, 
-                we deliver a complete ecommerce ecosystem that empowers your business to thrive online.
+                we delivery a complete ecommerce ecosystem that empowers your business to thrive online.
             </p>
 
         </div>
