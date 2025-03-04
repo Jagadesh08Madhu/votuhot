@@ -154,7 +154,7 @@ export default function Contact() {
         recipients: {
           // Recipient's email address (obtained from the form)
           // email: `${formData.email}`,
-          email: `rock250rock250@gmail.com`,
+          email: `votuhot@bobosohomail.com`,
         },
       });
 
@@ -175,6 +175,7 @@ export default function Contact() {
     <section className="mx-5 py-10 md:container font-alice md:mx-auto md:py-20">
       <div className="grid gap-8 md:gap-16 lg:grid-cols-2">
         <div className="flex flex-col gap-4 md:gap-8">
+        <h1 style={{letterSpacing:"10px"}} className="text-xl md:text-3xl">Votuhot LLC</h1>
           <h5 className="font-semibold md:text-2xl">Contact Us</h5>
           <p className="text-xl font-semibold text-primary md:text-3xl">
           Feel free to reach out! Contact us through our social channels for any inquiries or assistance.
@@ -185,7 +186,8 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-2">
               <h5 className="font-semibold">Address</h5>
-              <p>Address...</p>
+              <p>1309 Coffeen avenue STÉ 1200
+                Sheridan Wyoming 82801 Belgium </p>
             </div>
           </div>
           <div className="flex gap-5">
@@ -194,7 +196,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-2">
               <h5 className="font-semibold">Phone</h5>
-              <p>123456789</p>
+              <p>0032486729925</p>
             </div>
           </div>
           <div className="flex gap-5">
@@ -203,7 +205,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-2">
               <h5 className="font-semibold">Email</h5>
-              <p>xyz@gmail.com</p>
+              <p>votuhot@bobosohomail.com</p>
             </div>
           </div>
         </div>

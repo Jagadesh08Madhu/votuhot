@@ -19,7 +19,9 @@ export default function Footer() {
     { name: "Home", link: "/" },
     { name: "About us", link: "/about" },
     { name: "Hosting products", link: "/products" },
-    { name: "Data Center", link: "/data-center" }
+    { name: "Data Center", link: "/data-center" },
+    { name: "Privacy Policy", link: "/privacy-policy" },
+    { name: "Cookie Policy", link: "/cookie-policy" }
   ];
 
   return (
