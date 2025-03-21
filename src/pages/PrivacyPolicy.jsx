@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold">2. Information We Collect</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong>Personal Information:</strong>  When you interact with our website or engage with our BFINIT services, we may collect personal information such as your name,
+              <strong>Personal Information:</strong>  When you interact with our website or engage with our VOTUHOT services, we may collect personal information such as your name,
               email address, contact details, and any other information you provide voluntarily.
             </li>
             <li>
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
           By accessing our website or using our services, you consent to the collection, use, and disclosure of your personal information as described in this Privacy Policy.
           </p>
 
-          <p className="">Thank you for choosing BFINIT.</p>
+          <p className="">Thank you for choosing VOTUHOT.</p>
         </section>
       </div>
     </div>

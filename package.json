@@ -21,6 +21,7 @@
     "react-lottie": "^1.2.10",
     "react-router-dom": "^6.26.2",
     "smtpexpress": "^0.0.15",
+    "styled-components": "^6.1.16",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {

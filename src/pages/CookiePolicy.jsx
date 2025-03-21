@@ -9,7 +9,7 @@ export default function CookiePolicy() {
         </h1>
 
         <p className="text-gray-700">
-          This is the Cookie Policy for <span className="font-semibold">Votuhot</span>, hPanel hosting, Bitss, and Omada, accessible from{" "}
+          This is the Cookie Policy for <span className="font-semibold">Votuhot</span>, hPanel hosting{" "}
           <a href="https://bfinit.com" className="text-blue-600 hover:underline">
             https://bfinit.com
           </a>.

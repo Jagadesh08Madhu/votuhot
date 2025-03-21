@@ -12,28 +12,6 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const res = await fetch("https://hpanel.bfinit.com/api/product/categories");
-        const result = await res.json();
-
-        if (result.success && Array.isArray(result.data)) {
-          setCategories(result.data);
-        } else {
-          console.error("Unexpected API response format:", result);
-          setCategories([]);
-        }
-      } catch (err) {
-        console.error("Error fetching categories:", err);
-        setCategories([]);
-      }
-    };
-
-    fetchCategories();
-  }, []);
-
-  const isActive = (path) => location.pathname === path;
-  useEffect(() => {
     setIsOpen(false);
     setOpenSubmenu(null);
   }, [location.pathname]);
@@ -41,12 +19,18 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Hosting Products", path: "/products", hasSubmenu: true, submenuType: "categories" },
-    { name: "Policy", hasSubmenu: true, submenuType: "policy", submenu: [
-      { name: "Privacy Policy", path: "/privacy-policy" },
-      { name: "Cookie Policy", path: "/cookie-policy" }
-    ] }
+    { name: "Hosting Products", path: "/products" }, // Removed submenu
+    {
+      name: "Policy",
+      hasSubmenu: true,
+      submenu: [
+        { name: "Privacy Policy", path: "/privacy-policy" },
+        { name: "Cookie Policy", path: "/cookie-policy" },
+      ],
+    },
   ];
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <nav style={{ zIndex: "1000" }} className="font-alice bg-white sticky top-0 shadow-md shadow-gray-400 z-50">
@@ -79,34 +63,18 @@ export default function Navbar() {
                 <IoIosArrowDown className="inline ml-2 transition-transform duration-300 ease-in-out group-hover:rotate-180" />
               )}
 
-              {/* Submenu for Hosting Products and Policy */}
+              {/* Submenu for Policy */}
               {link.hasSubmenu && openSubmenu === link.name && (
                 <ul className="absolute left-0 top-2 bg-white shadow-lg border rounded-md w-[250px] mt-2 z-50">
-                  {link.submenuType === "categories" ? (
-                    categories.length > 0 ? (
-                      categories.map((category) => (
-                        <li
-                          key={category.id}
-                          onClick={() => navigate(`/products/${category.id}`)}
-                          className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
-                        >
-                          {category.name}
-                        </li>
-                      ))
-                    ) : (
-                      <li className="px-4 py-2 text-gray-500">Loading...</li>
-                    )
-                  ) : (
-                    link.submenu.map((sub) => (
-                      <li
-                        key={sub.path}
-                        onClick={() => navigate(sub.path)}
-                        className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
-                      >
-                        {sub.name}
-                      </li>
-                    ))
-                  )}
+                  {link.submenu.map((sub) => (
+                    <li
+                      key={sub.path}
+                      onClick={() => navigate(sub.path)}
+                      className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
+                    >
+                      {sub.name}
+                    </li>
+                  ))}
                 </ul>
               )}
             </li>
@@ -148,14 +116,15 @@ export default function Navbar() {
         <ul className="flex flex-col gap-5 text-sm text-center" style={{ letterSpacing: "3px" }}>
           {navLinks.map((link) => (
             <li
-            onClick={() => {
-              if (link.hasSubmenu) {
-                setIsOpen(true);
-              } else {
-                setIsOpen(!isOpen);
-              }
-            }}
               key={link.name}
+              onClick={() => {
+                if (!link.hasSubmenu) {
+                  setIsOpen(false);
+                  navigate(link.path);
+                } else {
+                  setOpenSubmenu(openSubmenu === link.name ? null : link.name);
+                }
+              }}
               className={`cursor-pointer transition-all duration-300 ease-in-out text-gray-800 hover:text-black ${
                 isActive(link.path)
                   ? "bg-[#7049c3] text-white px-6 py-2 rounded-md scale-105 shadow-md"
@@ -164,42 +133,38 @@ export default function Navbar() {
             >
               {link.hasSubmenu ? (
                 <>
-                  <span onClick={() => setOpenSubmenu(openSubmenu === link.name ? null : link.name)}>
+                  <span>
                     {link.name}
                     <IoIosArrowDown className={`inline ml-2 transition-transform duration-300 ease-in-out ${openSubmenu === link.name ? "rotate-180" : "rotate-0"}`} />
                   </span>
                   {openSubmenu === link.name && (
                     <ul className="mt-2 bg-gray-100 shadow-md rounded-md z-50">
-                      {link.submenuType === "categories" ? (
-                        categories.map((category) => (
-                          <li
-                            key={category.id}
-                            onClick={() => {
-                              navigate(`/products/${category.id}`);
-                            }}
-                            className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
-                          >
-                            {category.name}
-                          </li>
-                        ))
-                      ) : (
-                        link.submenu.map((sub) => (
-                          <li key={sub.path} onClick={() => navigate(sub.path)} className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer">
-                            {sub.name}
-                          </li>
-                        ))
-                      )}
+                      {link.submenu.map((sub) => (
+                        <li
+                          key={sub.path}
+                          onClick={() => {
+                            navigate(sub.path);
+                            setIsOpen(false);
+                          }}
+                          className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
+                        >
+                          {sub.name}
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </>
               ) : (
-                <span onClick={() => navigate(link.path)}>{link.name}</span>
+                <span>{link.name}</span>
               )}
             </li>
           ))}
         </ul>
         <button
-          onClick={() => {navigate("/contact") ; setIsOpen(!isOpen)}}
+          onClick={() => {
+            navigate("/contact");
+            setIsOpen(false);
+          }}
           className="bg-[#7049c3] px-6 py-2 mt-5 text-sm rounded-md text-white hover:bg-[#5d3cae] transition-all"
           style={{ letterSpacing: "6px" }}
         >
