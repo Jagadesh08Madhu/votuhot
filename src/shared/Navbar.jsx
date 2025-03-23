@@ -19,7 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Hosting Products", path: "/products" }, // Removed submenu
+    { name: "Hosting Products", path: `/products` }, // Removed submenu
     {
       name: "Policy",
       hasSubmenu: true,

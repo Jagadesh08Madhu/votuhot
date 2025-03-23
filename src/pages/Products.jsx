@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import intel from "../assets/intel.svg";
 import Loader from "../components/Loader";
 import Loader1 from "../components/Loader1";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Products() {
   const [categories, setCategories] = useState([]);
@@ -11,7 +12,10 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [loadingHosting, setLoadingHosting] = useState(false);
+  const { categoryId } = useParams();
+  const navigate = useNavigate();
 
+  // Fetch categories
   useEffect(() => {
     fetch("https://hpanel.bfinit.com/api/product/categories")
       .then((response) => response.json())
@@ -20,21 +24,20 @@ export default function Products() {
         setCategories(categoryList);
         setLoadingCategories(false);
 
-        if (categoryList.length > 0) {
-          setSelectedCategory(categoryList[0].id);
-        }
+        const defaultCategory = categoryId || (categoryList.length > 0 ? categoryList[0].id : "");
+        setSelectedCategory(defaultCategory);
+        if (defaultCategory) fetchHosting(defaultCategory);
       })
       .catch((error) => {
         console.error("Error fetching categories:", error);
         setLoadingCategories(false);
       });
-  }, []);
+  }, [categoryId]);
 
-  useEffect(() => {
-    if (!selectedCategory) return;
+  // Fetch hosting plans
+  const fetchHosting = (category) => {
     setLoadingHosting(true);
-
-    fetch(`https://hpanel.bfinit.com/api/votuhot.com/white/label/packages/${selectedCategory}`)
+    fetch(`https://hpanel.bfinit.com/api/votuhot.com/white/label/packages/${category}`)
       .then((response) => response.json())
       .then((data) => {
         setHosting(data?.data || []);
@@ -44,10 +47,21 @@ export default function Products() {
         console.error("Error fetching hosting data:", error);
         setLoadingHosting(false);
       });
-  }, [selectedCategory]);
+  };
+
+  // Handle category change
+  const handleCategoryChange = (e) => {
+    const newCategory = e.target.value;
+    setSelectedCategory(newCategory);
+    navigate(`/products/${newCategory}`);
+    fetchHosting(newCategory);
+  };
 
   return (
     <section className="py-20 w-full font-alice">
+      <h1 style={{ letterSpacing: "5px" }} className="text-center text-2xl lg:text-4xl font-semibold text-[#7049c3]">
+        Hosting Products
+      </h1>
       <h1 className="ml-2 mb-2 text-xl">Select Category:</h1>
       {loadingCategories ? (
         <Loader1 />
@@ -55,7 +69,7 @@ export default function Products() {
         <motion.select
           className="p-2 ml-2 outline-none border border-black"
           value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
+          onChange={handleCategoryChange}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -86,7 +100,7 @@ export default function Products() {
               ))}
             </motion.div>
           ) : (
-            <p>No hosting plans available for this category.</p>
+            <p className="text-center text-gray-600"><Loader/></p>
           )}
         </div>
       </div>
@@ -94,17 +108,24 @@ export default function Products() {
   );
 }
 
+// Hosting Card Component
 const HostingCard = ({ host }) => {
-  const [selectedRam, setSelectedRam] = useState(host.storage_variants[0]?.ram);
-  const [selectedStorage, setSelectedStorage] = useState(host.storage_variants[0]?.storage);
+  const [selectedRam, setSelectedRam] = useState(host.storage_variants[0]?.ram || "");
+  const [selectedStorage, setSelectedStorage] = useState(host.storage_variants[0]?.storage || "");
+const navigate = useNavigate()
+
+  
 
   const selectedVariant = host.storage_variants.find(
     (variant) => variant.ram === selectedRam && variant.storage === selectedStorage
   );
+  const handleOrderNow = () =>{
+    navigate('/checkout' ,{state : {host , selectedVariant}})
+  }
 
   return (
     <motion.div
-      className="flex flex-col gap-3 border px-6 shadow-lg rounded-2xl py-4"
+      className="flex flex-col border-t-4 border-[#7049c3] gap-3 border px-6 shadow-lg rounded-2xl py-4"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -119,7 +140,7 @@ const HostingCard = ({ host }) => {
         </div>
       </div>
       <div>
-        {Array.isArray(host.description) ? (
+        {Array.isArray(host.description) && (
           <ul>
             {host.description.map((desc, i) => (
               <div key={i} className="flex items-center gap-3">
@@ -130,32 +151,48 @@ const HostingCard = ({ host }) => {
               </div>
             ))}
           </ul>
-        ) : null}
+        )}
       </div>
-      <h1>IPS : {host.ips}</h1>
+      <h1>IPS: {host.ips}</h1>
       <h1>
-        Data Center: <strong>{Array.isArray(host.data_center) ? host.data_center.join(" | ").toUpperCase() : host.data_center?.toUpperCase()}</strong>
+        Data Center:{" "}
+        <strong>
+          {Array.isArray(host.data_center) ? host.data_center.join(" | ").toUpperCase() : host.data_center?.toUpperCase()}
+        </strong>
       </h1>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <h1 className="text-[#7049C3]">RAM:</h1>
-          <select className="border rounded-lg p-2" value={selectedRam} onChange={(e) => setSelectedRam(e.target.value)}>
+          <select
+            className="border outline-none focus:border-[#7049c3] transition-all ease-in-out duration-200 rounded-lg p-2"
+            value={selectedRam}
+            onChange={(e) => setSelectedRam(e.target.value)}
+          >
             {Array.from(new Set(host.storage_variants.map((storage) => storage.ram))).map((ram, index) => (
-              <option key={`ram-${index}`} value={ram}>{ram}</option>
+              <option key={`ram-${index}`} value={ram}>
+                {ram}
+              </option>
             ))}
           </select>
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-[#7049C3]">Storage:</h1>
-          <select className="border rounded-lg p-2" value={selectedStorage} onChange={(e) => setSelectedStorage(e.target.value)}>
+          <select
+            className="border outline-none focus:border-[#7049c3] transition-all ease-in-out duration-200 rounded-lg p-2"
+            value={selectedStorage}
+            onChange={(e) => setSelectedStorage(e.target.value)}
+          >
             {Array.from(new Set(host.storage_variants.map((storage) => storage.storage))).map((storage, index) => (
-              <option key={`storage-${index}`} value={storage}>{storage}</option>
+              <option key={`storage-${index}`} value={storage}>
+                {storage}
+              </option>
             ))}
           </select>
         </div>
         <h1 className="text-lg font-bold">
           Price: <span className="text-[#7049C3]">${selectedVariant ? selectedVariant.price : "N/A"}</span>
         </h1>
+        <button onClick={handleOrderNow} className="bg-[#7049c3] text-white py-2 mt-2 rounded-lg">Order Now</button>
       </div>
     </motion.div>
   );

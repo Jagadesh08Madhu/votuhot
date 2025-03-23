@@ -7,40 +7,49 @@ import Contact from "../pages/Contact";
 import Datacenter from "../components/Datacenter";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import CookiePolicy from "../pages/CookiePolicy";
+import { Checkout } from "../pages/Checkout";
 
 export const router = createBrowserRouter([
     {
-        path:"/",
-        element:<Main/>,
-        children:[
+        path: "/",
+        element: <Main />,
+        children: [
             {
-                path:"/",
-                element:<Home/>
+                path: "/",
+                element: <Home />
             },
             {
                 path: "/about",
-                element:<About/>
+                element: <About />
             },
             {
-                path:"/products",
-                element:<Products/>
+                path: "/products",
+                element: <Products />
             },
             {
-               path:"/contact",
-               element:<Contact/> 
+                path: "/products/:categoryId",  // ✅ Added dynamic route for category-based navigation
+                element: <Products />
             },
             {
-                path:"/data-center",
-                element:<Datacenter/>
+                path: "/contact",
+                element: <Contact />
             },
             {
-                path:"/privacy-policy",
-                element:<PrivacyPolicy/>
+                path: "/data-center",
+                element: <Datacenter />
             },
             {
-                path:"/cookie-policy",
-                element:<CookiePolicy/>
+                path: "/privacy-policy",
+                element: <PrivacyPolicy />
+            },
+            {
+                path: "/cookie-policy",
+                element: <CookiePolicy />
+            },
+            {
+                path : "/checkout",
+                element :<Checkout/>
             }
         ]
     }
-])
+]);
