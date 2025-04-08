@@ -187,7 +187,7 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <h5 className="font-semibold">Address</h5>
               <p>1309 Coffeen avenue STÉ 1200
-                Sheridan Wyoming 82801 Belgium </p>
+                Sheridan Wyoming 82801 </p>
             </div>
           </div>
           <div className="flex gap-5">
@@ -196,7 +196,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-2">
               <h5 className="font-semibold">Phone</h5>
-              <p>0032486729925</p>
+              <p>+17253348158</p>
             </div>
           </div>
           <div className="flex gap-5">
@@ -349,14 +349,11 @@ export default function Contact() {
         </form>
 
         <div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5795.795980198256!2d3.708454!3d43.420958!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b1357c2efa6fbb%3A0xddfc93666aef9f37!2s8%20Rue%20de%20Dublin%2C%2034200%20S%C3%A8te%2C%20France!5e0!3m2!1sen!2sbd!4v1723619506631!5m2!1sen!2sbd"
-            width="100%"
-            height="100%"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.6630108103545!2d-106.94353192427918!3d44.784172978554324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335f009b7255555%3A0xef97aa92cd680505!2s1309%20Coffeen%20Ave%20STE%201200%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e1!3m2!1sen!2sin!4v1744097098494!5m2!1sen!2sin" 
+          width="100%" height="100%"
+           allowfullscreen="" loading="lazy" 
+           referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
         </div>
       </div>
     </section>
