@@ -57,6 +57,10 @@ export default function Products() {
     fetchHosting(newCategory);
   };
 
+  // Find category name based on selectedCategory
+  const selectedCategoryObj = categories.find(cat => String(cat.id) === String(selectedCategory));
+  const categoryName = selectedCategoryObj ? selectedCategoryObj.name : "";
+
   return (
     <section className="py-20 w-full font-alice">
       <h1 style={{ letterSpacing: "5px" }} className="text-center text-2xl lg:text-4xl font-semibold text-[#7049c3]">
@@ -96,11 +100,15 @@ export default function Products() {
               transition={{ duration: 0.5 }}
             >
               {hosting.filter((host) => host.status === 1).map((host, index) => (
-                <HostingCard key={index} host={host} />
+                <HostingCard
+                  key={index}
+                  host={host}
+                  categoryName={categoryName}
+                />
               ))}
             </motion.div>
           ) : (
-            <p className="text-center text-gray-600"><Loader/></p>
+            <p className="text-center text-gray-600"><Loader /></p>
           )}
         </div>
       </div>
@@ -109,19 +117,33 @@ export default function Products() {
 }
 
 // Hosting Card Component
-const HostingCard = ({ host }) => {
-  const [selectedRam, setSelectedRam] = useState(host.storage_variants[0]?.ram || "");
-  const [selectedStorage, setSelectedStorage] = useState(host.storage_variants[0]?.storage || "");
-const navigate = useNavigate()
+const HostingCard = ({ host, categoryName }) => {
+  const navigate = useNavigate();
 
-  
+  // Initialize selectedVariant and selected RAM/storage from the first variant
+  const [selectedVariant, setSelectedVariant] = useState(host.storage_variants[0] || {});
+  const [selectedRam, setSelectedRam] = useState(selectedVariant.ram || "");
+  const [selectedStorage, setSelectedStorage] = useState(selectedVariant.storage || "");
+  const [selectedMonths, setSelectedMonths] = useState(3);
 
-  const selectedVariant = host.storage_variants.find(
-    (variant) => variant.ram === selectedRam && variant.storage === selectedStorage
-  );
-  const handleOrderNow = () =>{
-    navigate('/checkout' ,{state : {host , selectedVariant}})
-  }
+  // Update selectedVariant whenever selectedRam or selectedStorage changes
+  useEffect(() => {
+    const variant = host.storage_variants.find(
+      (variant) => variant.ram === selectedRam && variant.storage === selectedStorage
+    );
+    setSelectedVariant(variant || {});
+  }, [selectedRam, selectedStorage, host.storage_variants]);
+
+  const handleOrderNow = () => {
+    navigate("/checkout", {
+      state: {
+        host,
+        selectedVariant,
+        selectedMonths,
+        categoryName,
+      },
+    });
+  };
 
   return (
     <motion.div
@@ -157,7 +179,9 @@ const navigate = useNavigate()
       <h1>
         Data Center:{" "}
         <strong>
-          {Array.isArray(host.data_center) ? host.data_center.join(" | ").toUpperCase() : host.data_center?.toUpperCase()}
+          {Array.isArray(host.data_center)
+            ? host.data_center.join(" | ").toUpperCase()
+            : host.data_center?.toUpperCase()}
         </strong>
       </h1>
       <div className="flex flex-col gap-4">
@@ -189,10 +213,29 @@ const navigate = useNavigate()
             ))}
           </select>
         </div>
+
+        <div className="flex flex-col gap-2">
+          <h1 className="text-[#7049C3]">Months:</h1>
+          <select
+            className="border outline-none focus:border-[#7049c3] transition-all ease-in-out duration-200 rounded-lg p-2"
+            value={selectedMonths}
+            onChange={(e) => setSelectedMonths(Number(e.target.value))}
+          >
+            <option value={1}>1</option>
+            <option value={3}>3</option>
+            <option value={6}>6</option>
+            <option value={12}>12</option>
+            <option value={24}>24</option>
+          </select>
+        </div>
+
         <h1 className="text-lg font-bold">
-          Price: <span className="text-[#7049C3]">${selectedVariant ? selectedVariant.price : "N/A"}</span>
+          Price: <span className="text-[#7049C3]">${selectedVariant?.price ? (selectedVariant.price * selectedMonths).toFixed(2) : "N/A"}</span>
+          <span> /{selectedMonths} Months</span>
         </h1>
-        <button onClick={handleOrderNow} className="bg-[#7049c3] text-white py-2 mt-2 rounded-lg">Order Now</button>
+        <button onClick={handleOrderNow} className="bg-[#7049c3] mt-auto text-white py-2 rounded-lg">
+          Order Now
+        </button>
       </div>
     </motion.div>
   );

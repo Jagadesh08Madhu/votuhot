@@ -8,6 +8,8 @@ import Datacenter from "../components/Datacenter";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import CookiePolicy from "../pages/CookiePolicy";
 import { Checkout } from "../pages/Checkout";
+import SuccessPage from "../components/SuccessPage";
+import CancelPage from "../components/CancelPage";
 
 export const router = createBrowserRouter([
     {
@@ -49,6 +51,14 @@ export const router = createBrowserRouter([
             {
                 path : "/checkout",
                 element :<Checkout/>
+            },
+            {
+                path :'/success',
+                element: <SuccessPage />
+            },
+            {
+                path: '/cancel',
+                element: <CancelPage />
             }
         ]
     }

@@ -59,7 +59,7 @@ export default function Overview() {
 
     return (
         <motion.section 
-            className='py-10 lg:mx-20 mx-5'
+            className='py-10 lg:mx-20 mx-5 overflow-hidden'
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1 }}

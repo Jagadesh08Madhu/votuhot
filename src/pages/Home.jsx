@@ -45,7 +45,7 @@ export default function Home() {
 
         <Features/>
         <EccomContent/>
-        <AnimatedTestimonialsDemo/>
+        {/* <AnimatedTestimonialsDemo/> */}
         <Blog/>
     </section>
   )

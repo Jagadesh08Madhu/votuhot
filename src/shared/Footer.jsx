@@ -12,6 +12,7 @@ export default function Footer() {
     { name: "About us", link: "/about" },
     { name: "Hosting products", link: "/products" },
     { name: "Data Center", link: "/data-center" },
+    { name: "Contact", link: "/contact" },
     { name: "Privacy Policy", link: "/privacy-policy" },
     { name: "Cookie Policy", link: "/cookie-policy" },
   ];

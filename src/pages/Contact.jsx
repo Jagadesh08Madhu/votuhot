@@ -15,6 +15,8 @@ import logo from "../../src/assets/bitss_icon.png";
 import Captcha from "./Captcha";
 import { smtpexpressClient } from "./smtp";
 import { useNavigate } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export default function Contact() {
   const navigate = useNavigate();
@@ -206,6 +208,16 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <h5 className="font-semibold">Email</h5>
               <p>votuhot@bobosohomail.com</p>
+            </div>
+          </div>
+
+          <div className="flex gap-5">
+            <div className="flex h-fit w-fit items-center justify-center rounded-xl bg-[#7049C3] p-4 text-primary shadow">
+              <FaWhatsapp className="text-xl text-white md:text-2xl" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <h5 className="font-semibold">Whatsapp</h5>
+              <p>+32 486 72 99 25</p>
             </div>
           </div>
         </div>
